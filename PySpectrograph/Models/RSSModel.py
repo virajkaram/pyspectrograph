@@ -8,6 +8,7 @@ are fixed.
                 -include the most up to date chip geometry
 20120511  SMC   -Updated to inherit directly from Spectrograph
                 -Included get_wavelength
+20230317  VRK   -Add PG700
 
 Limitations:
 -Set the geometry of the CCDs using the current geometry file instead of the
@@ -131,6 +132,8 @@ class RSSModel (Spectrograph):
     def set_grating(self, name=None):
         if name == 'PG0300':
             self.grating = Grating(name='PG0300', spacing=300)
+        if name == 'PG0700':
+            self.grating = Grating(name='PG0700', spacing=700)
         elif name == 'PG0900':
             self.grating = Grating(name='PG0900', spacing=903.20)
         elif name == 'PG1300':
